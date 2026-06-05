@@ -73,7 +73,7 @@ module.exports = async function handler(req, res) {
     // Initialize Gemini
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({
-      model: 'gemini-2.0-flash',
+      model: 'gemini-2.5-flash',
       systemInstruction: SYSTEM_PROMPT,
     });
 
@@ -115,7 +115,7 @@ module.exports = async function handler(req, res) {
 
     return res.status(200).json({
       response: responseText,
-      model: 'gemini-2.0-flash',
+      model: 'gemini-2.5-flash',
       timestamp: new Date().toISOString(),
     });
 
@@ -129,7 +129,7 @@ module.exports = async function handler(req, res) {
     } else if (error.message?.includes('QUOTA_EXCEEDED')) {
       errorMessage = 'Gemini API quota exceeded. Free tier: 15 requests/min. Please wait and retry.';
     } else if (error.message?.includes('404')) {
-      errorMessage = 'Gemini model not found. Make sure you are using gemini-2.0-flash.';
+      errorMessage = 'Gemini model not found. Make sure you are using gemini-2.5-flash.';
     }
 
     return res.status(500).json({
