@@ -1,0 +1,28 @@
+{
+  "name": "aurex-backend",
+  "version": "1.0.0",
+  "description": "AUREX AI Assistant — Vercel Serverless Backend",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "mongodb": "^6.8.0"
+  },
+  "devDependencies": {
+    "vercel": "^54.9.1"
+  },
+  "keywords": [
+    "aurex",
+    "ai",
+    "gemini",
+    "vercel",
+    "serverless"
+  ],
+  "license": "MIT"
+}
