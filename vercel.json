@@ -1,4 +1,6 @@
 {
+  "version": 2,
+  "name": "aurex-backend",
   "headers": [
     {
       "source": "/api/(.*)",
@@ -8,5 +10,13 @@
         { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
       ]
     }
-  ]
+  ],
+  "functions": {
+    "api/chat.js": {
+      "maxDuration": 30
+    },
+    "api/history.js": {
+      "maxDuration": 10
+    }
+  }
 }
